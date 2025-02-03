@@ -4,10 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
-	"net/http"
 	"os"
 
-	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 	"github.com/spyder7370/SMH-Service/connections"
@@ -35,11 +33,5 @@ func main() {
 	}
 	fmt.Println(databaseConnectionUrl)
 	fmt.Println("Hello")
-	httpServer := gin.Default()
-	httpServer.GET("/ping", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "pong",
-		})
-	})
-	httpServer.Run()
+
 }

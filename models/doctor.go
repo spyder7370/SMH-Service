@@ -1,9 +1,15 @@
 package models
 
-import "github.com/google/uuid"
+// id uuid primary key default uuid_generate_v4(),
+// name text not null,
+// password text not null,
+// specialisation text not null,
+// phone text,
+// email text,
+// dob date,
+// address text
 
 type Doctor struct {
-	Id          uuid.UUID     `json:"id"`
-	Name        string        `json:"name"`
+	Person      Person        `json:"Person"`
 	Departments []*Department `json:"department"`
 }
